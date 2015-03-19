@@ -12,7 +12,7 @@ If you don't have Bower you first need to download npm.  The easiest way to get 
 
 After you have bower, run `bower install` in the project directory.
 
-Also feel free to see if your operating system has a more lightweight npm download (here) [https://github.com/npm/npm].  Also, note that dependencies should be installed on Vagrant cleanly if you have any issues here.
+Also feel free to see if your operating system has a more lightweight npm download [here] (https://github.com/npm/npm).  Also, note that dependencies should be installed on Vagrant cleanly if you have any issues here.
 
 
 #To run
