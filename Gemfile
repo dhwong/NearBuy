@@ -17,7 +17,6 @@ gem 'slim-rails'
 gem 'bootstrap-sass'
 
 group :development do
-	gem 'capistrano', '~> 3.1.0'
   gem 'spring-commands-rspec'
 end
 
@@ -26,3 +25,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
 end
+
+# for deployment
+gem 'passenger'
