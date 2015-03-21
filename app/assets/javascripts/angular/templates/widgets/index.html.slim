@@ -6,8 +6,8 @@ html lang="en"
     meta content="width=device-width, user-scalable=no" name="viewport" /
   body data-ng-app="WebApp" 
     header
-      .navbar.navbar-inverse.navbar-fixed-top
-        .container-fluid
+      .navbar.navbar-inverse.navbar-fixed-top 
+        .container-fluid 
           .navbar-header
             button.navbar-toggle.collapsed data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
               span.sr-only Toggle navigation
@@ -22,11 +22,29 @@ html lang="en"
                   | Home
                   span.sr-only
             /! right navbar
-            ul.nav.navbar-nav.navbar-right
-              li
+            ul.nav.navbar-nav.navbar-right 
+              li 
                 a href="#" title="Contact"  Contact
               li
-                a href="#" title=("Sign In")  Sign In
+                a data-target="#myModal" data-toggle="modal" href="#myModal"  Log-in
+      #myModal.modal.fade
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+              h4.modal-title Log-in
+            .modal-body
+              .form-group
+                label for="exampleInputEmail1"  Email address
+                input#exampleInputEmail1.form-control placeholder=("Enter email") type="email" /
+              .form-group
+                label for="exampleInputPassword1"  Password
+                input#exampleInputPassword1.form-control placeholder="Password" type="password" /
+              p.text-right
+                a href="#"  Forgot password?
+            .modal-footer
+              a.btn data-dismiss="modal" href="#"  Close
+              a.btn.btn-primary href="#"  Log-in          
     .mainContainer
       .jumbotron
         h1 NearBuy
@@ -42,4 +60,3 @@ html lang="en"
               a href="/" title="Home" 
           .col-sm-6.col-md-5
             .footerSearch
-
