@@ -28,4 +28,3 @@ end
 
 # for deployment
 gem 'heroku'
-gem 'rails_12factor'
