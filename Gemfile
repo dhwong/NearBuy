@@ -6,7 +6,7 @@ gem 'rails', '4.1.5'
 gem 'dotenv-rails'
 
 # db
-gem 'sqlite3'
+gem 'pg'
 
 # front end
 gem 'sass-rails', '~> 4.0.3'
@@ -26,11 +26,8 @@ group :development, :test do
   gem 'faker'
 end
 
-# for deployment (https://gorails.com/deploy/ubuntu/14.04)
-gem 'passenger'
-gem 'capistrano', '~> 3.1.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
-
-# because were using rbenv on our production server
-gem 'capistrano-rbenv', github: "capistrano/rbenv"
+# for deployment
+gem 'heroku'
+gem 'rails_12factor'
+gem 'rails_log_stdout', github: 'heroku/rails_log_stdout'
+gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
