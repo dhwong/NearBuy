@@ -2,7 +2,9 @@
 
 #NearBuy
 
-A shopping webapp made with Ruby Rails and Angular.  For now, it has a simple example app.
+A shopping webapp made with Ruby Rails and Angular.
+
+Testing server: https://damp-castle-8451.herokuapp.com/widgets
 
 #Dependencies
 

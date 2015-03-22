@@ -6,7 +6,7 @@ gem 'rails', '4.1.5'
 gem 'dotenv-rails'
 
 # db
-gem 'sqlite3'
+gem 'pg'
 
 # front end
 gem 'sass-rails', '~> 4.0.3'
@@ -27,4 +27,4 @@ group :development, :test do
 end
 
 # for deployment
-gem 'passenger'
+gem 'heroku'
