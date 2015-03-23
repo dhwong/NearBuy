@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141005040238) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "widgets", force: true do |t|
     t.text     "title"
     t.text     "content"
