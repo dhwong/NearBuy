@@ -11,10 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141005040238) do
+ActiveRecord::Schema.define(version: 20150402231720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "inventory_items", force: true do |t|
+    t.integer  "store_id"
+    t.integer  "item_id"
+    t.integer  "price_in_cents"
+    t.integer  "in_stock"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "inventory_items", ["item_id"], name: "index_inventory_items_on_item_id", using: :btree
+  add_index "inventory_items", ["store_id"], name: "index_inventory_items_on_store_id", using: :btree
+
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.string   "category"
+    t.string   "brand"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["name"], name: "index_items_on_name", unique: true, using: :btree
+
+  create_table "stores", force: true do |t|
+    t.integer  "owner_id"
+    t.string   "name"
+    t.string   "location"
+    t.string   "store_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stores", ["name"], name: "index_stores_on_name", unique: true, using: :btree
+
+  create_table "users", force: true do |t|
+    t.integer  "userID"
+    t.string   "email"
+    t.string   "password"
+    t.string   "fname"
+    t.string   "lname"
+    t.boolean  "isOwner"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   create_table "widgets", force: true do |t|
     t.text     "title"
