@@ -17,3 +17,6 @@
 
 # Ignore DS_Store for Mac
 DS_Store
+
+# Ignore any npm debug logs
+npm-debug.log
