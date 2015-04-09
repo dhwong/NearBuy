@@ -1,0 +1,39 @@
+body style="margin-left:125px" 
+  h1 Store Info
+  .divider
+  br/
+  div style="margin-left:75px" 
+    table
+      tr
+        th align="right" height="50" width="125" 
+          b Store Name:
+        td width="750" 
+          text ng-model="store.name"  Name of Store
+      tr
+        th align="right" height="50" width="125" 
+          b Store Type:
+        td width="750" 
+          text ng-model="store.store_type"  Type of Store
+      tr
+        th align="right" height="50" width="125" 
+          b Store Location:
+        td width="750" 
+          text ng-model="store.location"  Store Address
+    br/
+    div align="right" style="margin-right:125px" 
+      button ui-sref="stores.edit"  Edit Information
+.content
+  head
+    title Landing NearBuy
+    link href="css/stylesheet.css" rel="stylesheet" type="text/css" /
+  body
+  	// TODO: Make this route to our home page
+    a.logo href="/home"
+      .center = image_tag "logo.png"
+    .center-container
+    	// TODO: make this search our home page search bar
+    	// form action="index.html" name="search" 
+    	form name="search"
+        input.resizedTextbox maxlength="120" name="val" placeholder=("Search Query") type="text" /
+        t
+        input.white.button action="index.html" onclick=("return checkform(document.search.val)") type="submit" /

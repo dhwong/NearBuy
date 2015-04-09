@@ -1,0 +1,27 @@
+body style="margin-left:125px" 
+  h1 Store Info
+  .divider
+  br/
+  div style="margin-left:75px" 
+    form method="POST" 
+      table
+        tr
+          th align="right" height="50" width="125" 
+            b Store Name:
+          td
+            textarea cols="100" ng-model="store.name" required="" rows="1" 
+        tr
+          th align="right" height="50" width="125" 
+            b Store Type:
+          td
+            select required="" 
+              option ng-model="store.store_type"  Default
+              option Placeholder
+        tr
+          th align="right" height="50" width="125" 
+            b Store Location:
+          td
+            textarea cols="100" ng-model="store.location" required="" rows="1" 
+      br/
+      div align="right" style="margin-right:125px" 
+        button action="saveStore" type="submit" ui-sref="stores.show"  Save Information

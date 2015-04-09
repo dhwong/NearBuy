@@ -54,4 +54,19 @@ APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
       templateUrl: 'widgets/show.html',
       controller: 'WidgetsShowController'
     });
+   .state('stores', {
+      url: '/stores',
+      abstract: true,
+      template: '<div ui-view></div>'
+    })
+    .state('stores.show', {
+      url: '/stores/:id',
+      templateUrl: 'stores/show.html',
+      controller: 'StoresShowController'
+    })
+    .state('stores.edit', {
+      url: '/stores/:id/edit',
+      templateUrl: 'stores/edit.html',
+      controller: 'StoresEditController'
+    });
 }]);
