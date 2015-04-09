@@ -16,6 +16,20 @@ ActiveRecord::Schema.define(version: 20150402231720) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "articles", force: true do |t|
+    t.string   "title"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categorizations", force: true do |t|
+    t.integer  "article_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "inventory_items", force: true do |t|
     t.integer  "store_id"
     t.integer  "item_id"
@@ -38,8 +52,17 @@ ActiveRecord::Schema.define(version: 20150402231720) do
 
   add_index "items", ["name"], name: "index_items_on_name", unique: true, using: :btree
 
+  create_table "posts", force: true do |t|
+    t.text     "title"
+    t.text     "body"
+    t.date     "date"
+    t.text     "tags"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "stores", force: true do |t|
-    t.integer  "owner_id"
+    t.integer  "owner"
     t.string   "name"
     t.string   "location"
     t.string   "store_type"
@@ -48,6 +71,13 @@ ActiveRecord::Schema.define(version: 20150402231720) do
   end
 
   add_index "stores", ["name"], name: "index_stores_on_name", unique: true, using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"
