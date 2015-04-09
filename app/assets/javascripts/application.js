@@ -24,26 +24,34 @@ var APP = angular.module('Tutorial', [
 
 APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'RestangularProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
-  RestangularProvider.setBaseUrl("/api");
-  RestangularProvider.setDefaultRequestParams({format: "json"});
+  RestangularProvider.setBaseUrl('/api');
+  RestangularProvider.setDefaultRequestParams({format: 'json'});
 
   $locationProvider.html5Mode(true);
-  $urlRouterProvider.otherwise("/widgets");
+  $urlRouterProvider.otherwise('/home');
 
   $stateProvider
+    .state('landing', {
+      url: '/',
+      template: 'This is the landing page!!',
+    })
+    .state('home', {
+      url: '/home',
+      templateUrl: 'home/index.html'
+    })
     .state('widgets', {
-      url: "/widgets",
+      url: '/widgets',
       abstract: true,
-      template: "<div ui-view></div>"
+      template: '<div ui-view></div>'
     })
     .state('widgets.list', {
-      url: "",
-      templateUrl: "widgets/index.html",
-      controller: "WidgetsListController"
+      url: '',
+      templateUrl: 'widgets/index.html',
+      controller: 'WidgetsListController'
     })
     .state('widgets.show', {
-      url: "/widgets/:id",
-      templateUrl: "widgets/show.html",
-      controller: "WidgetsShowController"
+      url: '/widgets/:id',
+      templateUrl: 'widgets/show.html',
+      controller: 'WidgetsShowController'
     });
 }]);
