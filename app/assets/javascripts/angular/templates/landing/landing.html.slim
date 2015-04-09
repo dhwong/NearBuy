@@ -1,2 +1,15 @@
 .content
-  b this is a landing pg test
+  head
+    title Landing NearBuy
+    link href="css/stylesheet.css" rel="stylesheet" type="text/css" /
+  body
+  	// TODO: Make this route to our home page
+    a.logo href="/home"
+      .center = image_tag "logo.png"
+    .center-container
+    	// TODO: make this search our home page search bar
+    	// form action="index.html" name="search" 
+    	form name="search"
+        input.resizedTextbox maxlength="120" name="val" placeholder=("Search Query") type="text" /
+        t
+        input.white.button action="index.html" onclick=("return checkform(document.search.val)") type="submit" /

@@ -33,7 +33,7 @@ APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
   $stateProvider
     .state('landing', {
       url: '/',
-      template: 'This is the landing page!!',
+      templateUrl: 'landing/landing.html',
     })
     .state('home', {
       url: '/home',
