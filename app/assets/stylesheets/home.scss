@@ -1,0 +1,18 @@
+/* 
+ *= require_self
+ */
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url('Pacifico.ttf');
+    font-weight: bold;
+}
+
+.pacifico {
+	font-family: 'Pacifico';
+	font-size: 500%;
+	padding-bottom: 38px;
+	padding-top: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
