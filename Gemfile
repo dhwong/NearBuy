@@ -3,19 +3,17 @@ source 'https://rubygems.org'
 # rails
 gem 'rails', '4.1.5'
 
-gem 'dotenv-rails'
-
-# db
+# Postgres 
 gem 'pg'
 
-# front end
+# front end dependencies
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-
 gem 'slim-rails'
 gem 'bootstrap-sass'
 
+# Rspecs
 group :development do
   gem 'spring-commands-rspec'
 end
@@ -28,3 +26,4 @@ end
 
 # for deployment
 gem 'heroku'
+gem 'dotenv-rails'
