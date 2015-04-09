@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 20150402231720) do
   end
 
   create_table "users", force: true do |t|
-    t.integer  "userID"
     t.string   "email"
     t.string   "password"
     t.string   "fname"
