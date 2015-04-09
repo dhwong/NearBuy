@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20150402231720) do
   add_index "stores", ["name"], name: "index_stores_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.integer  "userID"
     t.string   "email"
     t.string   "password"
     t.string   "fname"
