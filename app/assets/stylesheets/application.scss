@@ -12,3 +12,9 @@ form {
 .form-controls {
   margin-bottom: 10px;
 }
+
+body {
+  background-image: image_url("bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
