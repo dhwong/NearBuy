@@ -37,7 +37,16 @@ APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
     })
     .state('home', {
       url: '/home',
+      abstract: true,
       templateUrl: 'home/index.html'
+    })
+    .state('home.suggestions', {
+      url: '',
+      templateUrl: 'home/suggestions.html',
+    })
+    .state('home.search', {
+      url: '/results',
+      templateUrl: 'home/results.html',
     })
     .state('widgets', {
       url: '/widgets',
