@@ -7,13 +7,13 @@ end
 # Create Users
 
 User.create(email: "jimmy_boy@hotmail.com", fname: "Jimmy", lname: "Cunningham",
-			password: "jimmy", isOwner: true)
+			password: "jimmy", password_confirmation: "jimmy", isOwner: true)
 
 User.create(email: "sarah.crawford@GMAIL.com", fname: "Sarah", lname: "Crawford",
-			password: "sandwich", isOwner: true)
+			password: "sandwich", password_confirmation: "sandwich", isOwner: true)
 
 User.create(email: "itsGilbertYo@yahoo.com", fname: "Gilbert", lname: "Schmidt",
-			password: "12345abc", isOwner: true)
+			password: "12345abc", password_confirmation: "12345abc", isOwner: true)
 
 
 # Create Stores
