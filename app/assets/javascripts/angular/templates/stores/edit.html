@@ -1,0 +1,19 @@
+<body style="margin-left:125px">
+	<h1>Store Info</h1>
+	<div class="divider"></div>
+	<br/>
+	<div style="margin-left:75px margin-right:125px">
+		<form ng-controller="StoresEditController">
+			<div width="125" height="50" align="right"><b>Store Name:</b></div>
+			<input required type="text" placeholder="{{store.name}}" name="storeName" ng-model="store.name" />
+			
+			<div width="125" height="50" align="right"><b>Store Type:</b></div>
+			<input required type="text" placeholder="{{store.type}}" name="storeType" ng-model="store.type" />
+			
+			<div width="125" height="50" align="right"><b>Store Location:</b></div>
+			<input required type="text" placeholder="{{store.location}}" name="storeLocation" ng-model="store.location" />
+
+			<button class="btn btn-info" align="right" ng-click="saveStore()" type="submit">Save Information</button>
+		</form>
+	</div>
+</body>
