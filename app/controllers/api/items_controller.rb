@@ -8,8 +8,11 @@ class Api::ItemsController < Api::BaseController
   end
 
   def create
-    respond_with :api, items.create(item_params)
+    respond_with :api, Item.create(item_params)
   end
+
+  def update
+    respond_with :api, Item.update(item_params)
 
   def destroy
     respond_with :api, item.destroy
@@ -17,15 +20,15 @@ class Api::ItemsController < Api::BaseController
 
   private
 
-  def items
-    @items ||= Item.all
-  end
+    def items
+      @items ||= Item.all
+    end
 
-  def item
-    @item ||= items.find(params[:id])
-  end
+    def item
+      @item ||= items.find(params[:id])
+    end
 
-  def item_params
-    params.permit(:name, :category, :brand)
-  end
+    def item_params
+      params.require(:item).permit(:name, :category, :brand)
+    end
 end

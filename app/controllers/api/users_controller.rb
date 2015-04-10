@@ -8,7 +8,11 @@ class Api::UsersController < Api::BaseController
   end
 
   def create
-    respond_with :api, users.create(user_params)
+    respond_with :api, User.create(user_params)
+  end
+
+  def update
+    respond_with :api, User.update(user_params)
   end
 
   def destroy
@@ -17,15 +21,16 @@ class Api::UsersController < Api::BaseController
 
   private
 
-  def users
-    @users ||= User.all
-  end
+    def users
+      @users ||= User.all
+    end
 
-  def user
-    @user ||= users.find(params[:id])
-  end
+    def user
+      @user ||= users.find(params[:id])
+    end
 
-  def user_params
-    params.permit(:email, :fname, :lname, :isOwner)
-  end
+    def user_params
+      params.require(:user).permit(:email, :fname, :lname, :isOwner,
+                                  :password, :password_confirmation)
+    end
 end
