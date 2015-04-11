@@ -38,7 +38,8 @@ APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
     .state('home', {
       url: '/home',
       abstract: true,
-      templateUrl: 'home/index.html'
+      templateUrl: 'home/index.html',
+      controller: 'indexCtrl'
     })
     .state('home.suggestions', {
       url: '',
