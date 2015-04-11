@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # rails
 gem 'rails', '4.1.5'
+gem 'bcrypt'
 
 # Postgres 
 gem 'pg'

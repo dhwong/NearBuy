@@ -1,5 +1,5 @@
-  body data-ng-app="WebApp" 
-    header
+  body data-ng-app="Tutorial" 
+    header 
       .navbar.navbar-inverse.navbar-fixed-top 
         .container-fluid 
           .navbar-header
@@ -21,6 +21,8 @@
                 a href="#" title="Contact"  Contact
               li
                 a data-target="#myModal" data-toggle="modal" href="#myModal"  Log-in
+              li
+                a data-target="#myRegModal" data-toggle="modal" href="#myModal"  Register
       #myModal.modal.fade
         .modal-dialog
           .modal-content
@@ -39,6 +41,31 @@
             .modal-footer
               a.btn data-dismiss="modal" href="#"  Close
               a.btn.btn-primary href="#"  Log-in
+      #myRegModal.modal.fade
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+              h4.modal-title Register
+            .modal-body
+              .form-group data-ng-model="fname"
+                label for="exampleInputEmail1"  First Name
+                input#exampleInputEmail1.form-control placeholder=("Ben") /
+              .form-group data-ng-model="lname"
+                label for="exampleInputEmail1"  Last Name
+                input#exampleInputEmail1.form-control placeholder=("Grisz") /
+              .form-group data-ng-model="email"
+                label for="exampleInputEmail1"  Email address
+                input#exampleInputEmail1.form-control placeholder=("Enter email") type="email" /
+              .form-group data-ng-model="password"
+                label for="exampleInputPassword1"  Password
+                input#exampleInputPassword1.form-control placeholder="Password" type="password" /
+              .form-group data-ng-model="password_confirmation"
+                label for="exampleInputPasswordConfirm"  Confirm Password
+                input#exampleInputPassword1.form-control placeholder="Password" type="password" /
+            .modal-footer
+              a.btn data-dismiss="modal" href="#"  Close
+              a.btn.btn-primary ng-click="register(regUser)"  Register
 
     .bg
       .pacifico.text-center NearBuy

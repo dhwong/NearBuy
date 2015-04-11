@@ -8,8 +8,11 @@ class Api::StoresController < Api::BaseController
   end
 
   def create
-    respond_with :api, stores.create(store_params)
+    respond_with :api, Store.create(store_params)
   end
+
+  def update
+    respond_with :api, Store.update(store_params)
 
   def destroy
     respond_with :api, store.destroy
@@ -17,15 +20,15 @@ class Api::StoresController < Api::BaseController
 
   private
 
-  def stores
-    @stores ||= Store.all
-  end
+    def stores
+      @stores ||= Store.all
+    end
 
-  def store
-    @store ||= stores.find(params[:id])
-  end
+    def store
+      @store ||= stores.find(params[:id])
+    end
 
-  def store_params
-    params.permit(:name, :store_type, :location, :owner_id)
-  end
+    def store_params
+      params.require(:store).permit(:name, :store_type, :location, :owner_id)
+    end
 end
