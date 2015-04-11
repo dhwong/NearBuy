@@ -5,8 +5,20 @@
 .pacifico {
 	font-family: 'Pacifico';
 	font-size: 500%;
-	padding-bottom: 38px;
-	padding-top: 30px;
+	padding-bottom: 40px;
+	padding-top: 70px;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+.bg {
+	width: 100%;
+	height: 310px;
+	background-image: image_url("tx.jpg");
+	background-image: 50%;
+}
+
+.input-group {
+	padding-left: 120px;
+	padding-right: 120px;
 }
