@@ -1,9 +1,10 @@
 class Api::SessionController < Api::BaseController
 
-  before_action 
+  before_action :require_login
 
   def create
-    @current_user
+    user = @current_user.authenticate(params[:password])
+    session[:current_user_id] = user.id
   end
 
   def destroy
@@ -20,7 +21,10 @@ class Api::SessionController < Api::BaseController
   end
 
   def require_login
-    User.authenticate(:password_confirmation)
+    user = @current_user.authenticate(params[:password])
   end
 
+  def user_params
+    params.permit(:password)
+  end
 end
