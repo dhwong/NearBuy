@@ -4,7 +4,10 @@
 
 A shopping webapp made with Ruby Rails and Angular.
 
-Testing server: https://damp-castle-8451.herokuapp.com/widgets
+~~Testing server~~: https://damp-castle-8451.herokuapp.com/widgets
+
+# [!] Headsup to the testing team
+**We are going to need another day to assemble some of this, unfortunately.  If possible, hold off on testing until Sunday.  We appreciate your cooperation.**
 
 #Dependencies
 
