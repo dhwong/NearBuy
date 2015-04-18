@@ -13,6 +13,7 @@ class Api::ItemsController < Api::BaseController
 
   def update
     respond_with :api, Item.update(item_params)
+  end
 
   def destroy
     respond_with :api, item.destroy
