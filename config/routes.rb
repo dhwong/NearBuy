@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :items
     resources :stores
     resources :inventory_items
+    resources :sessions, :only => [:create, :new, :destroy]
   end
+
 
   get "*path", to: "application#index"
   root 'application#index'

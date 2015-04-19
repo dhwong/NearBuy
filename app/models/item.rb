@@ -5,4 +5,9 @@ class Item < ActiveRecord::Base
 					 uniqueness: true
 	validates :category, presence: true, length: { maximum: 255 }
 	validates :brand, length: { maximum: 255 }
+
+
+	def self.search(search)
+		find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+	end
 end
