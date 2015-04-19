@@ -1,5 +1,6 @@
 class Api::StoresController < Api::BaseController
   def index
+    # this needs added functionality
     respond_with :api, stores
   end
 

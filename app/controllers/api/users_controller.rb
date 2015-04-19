@@ -1,4 +1,6 @@
 class Api::UsersController < Api::BaseController
+  # before_filter :correct_user, only: :show
+
   def index
     respond_with :api, users
   end
@@ -30,7 +32,7 @@ class Api::UsersController < Api::BaseController
     end
 
     def user_params
-      params.permit(:email, :fname, :lname, :isOwner,
+      params.require(:user).permit(:email, :fname, :lname, :isOwner,
                                   :password, :password_confirmation)
     end
 end
