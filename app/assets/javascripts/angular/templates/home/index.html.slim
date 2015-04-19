@@ -36,31 +36,39 @@
             .modal-footer
               a.btn data-dismiss="modal" href="#"  Close
               a.btn.btn-primary href="#"  Log-in
-      #myRegModal.modal.fade
+      #myRegModal.modal.fade data-ng-controller="indexCtrl"
         .modal-dialog
           .modal-content
             .modal-header
               button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
-              h4.modal-title Register
+              h4.modal-title Register {{user.fname}} {{user.lname}}
             .modal-body
-              .form-group data-ng-model="fname"
-                label for="exampleInputEmail1"  First Name
-                input#exampleInputEmail1.form-control placeholder=("Ben") /
-              .form-group data-ng-model="lname"
-                label for="exampleInputEmail1"  Last Name
-                input#exampleInputEmail1.form-control placeholder=("Grisz") /
-              .form-group data-ng-model="email"
-                label for="exampleInputEmail1"  Email address
-                input#exampleInputEmail1.form-control placeholder=("Enter email") type="email" /
-              .form-group data-ng-model="password"
-                label for="exampleInputPassword1"  Password
-                input#exampleInputPassword1.form-control placeholder="Password" type="password" /
-              .form-group data-ng-model="password_confirmation"
+              .form-group 
+                label for="firstNameInput"  First Name
+                input#firstNameInput.form-control data-ng-model="user.fname" placeholder=("Ben") /
+              .form-group 
+                label for="lastNameInput"  Last Name
+                input#lastNameInput.form-control data-ng-model="user.lname" placeholder=("Grisz") /
+              .form-group 
+                label for="inputEmail"  Email address
+                input#inputEmail.form-control data-ng-model="user.email" placeholder=("Enter email") type="email" /
+              .form-group 
+                label for="exampleInputPassword"  Password
+                input#exampleInputPassword.form-control data-ng-model="user.password" placeholder="Password" type="password" /
+              .form-group 
                 label for="exampleInputPasswordConfirm"  Confirm Password
-                input#exampleInputPassword1.form-control placeholder="Password" type="password" /
+                input#exampleInputPassword1.form-control data-ng-model="user.password_confirmation" placeholder="Password" type="password" /
+              .form-group 
+                lable for="isOwner" Are you a Store Owner or a User?
+                label.radio-inline
+                  input name="optradio" data-ng-model="user.isOwner" data-ng-value="true" type="radio" 
+                  | Store Owner
+                label.radio-inline
+                  input name="optradio" data-ng-model="user.isOwner" data-ng-value="false" type="radio" 
+                  | User
             .modal-footer
               a.btn data-dismiss="modal" href="#"  Close
-              a.btn.btn-primary ng-click="register(regUser)"  Register
+              a.btn.btn-primary ng-click="create(user)" Register
 
     .bg
       .pacifico.text-center NearBuy
