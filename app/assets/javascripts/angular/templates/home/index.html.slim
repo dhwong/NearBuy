@@ -8,13 +8,8 @@
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a.navbar-brand href="/"  NearBuy
+            a.navbar-brand href="/"  Home
           #bs-example-navbar-collapse-1.collpase.navbar-collapse
-            ul.nav.navbar-nav
-              li data-ng-class=("{active: isActive('/')}") 
-                a href="#" 
-                  | Home
-                  span.sr-only
             /! right navbar
             ul.nav.navbar-nav.navbar-right 
               li 
@@ -69,10 +64,30 @@
 
     .bg
       .pacifico.text-center NearBuy
-      .input-group ng-app="se" 
-        input.form-control placeholder=("Search for...") type="text" /
-        span.input-group-btn
-          button.btn.btn-default role="button" type="button"  Search
+      .div.search-tools
+        .input-group ng-app="se" 
+          input.form-control placeholder=("Search for...") type="text" /
+          span.input-group-btn
+            button.btn.btn-default type="button" Search
+
+        .div.search-options
+          .col-md-3
+            button#menu1.btn.btn-default.dropdown-toggle data-toggle="dropdown" type="button" 
+              | Show Filter Options
+            ul.dropdown-menu aria-labelledby="menu1" role="menu" 
+              li role="presentation" 
+                a href="#" role="menuitem" tabindex="-1"  HTML
+              li role="presentation" 
+                a href="#" role="menuitem" tabindex="-1"  CSS
+              li role="presentation" 
+                a href="#" role="menuitem" tabindex="-1"  JavaScript
+              li.divider role="presentation" 
+              li role="presentation" 
+                a href="#" role="menuitem" tabindex="-1"  About Us
+          .col-md-1
+            a.btn col 2
+          .col-md-1
+            a.btn col 3
 
     // ui-router injection here
     .container-fluid
