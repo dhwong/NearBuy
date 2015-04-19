@@ -14,6 +14,7 @@ class Api::StoresController < Api::BaseController
 
   def update
     respond_with :api, Store.update(store_params)
+  end
 
   def destroy
     respond_with :api, store.destroy

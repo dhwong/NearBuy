@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # rails
 gem 'rails', '4.1.5'
@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'slim-rails'
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 
 # Rspecs
 group :development do

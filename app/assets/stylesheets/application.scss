@@ -1,9 +1,11 @@
 /*
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 @import "bootstrap";
+@import "font-awesome";
 
 form {
   padding: 15px;
@@ -13,14 +15,16 @@ form {
   margin-bottom: 10px;
 }
 
+/*
 body {
   background-image: image_url("bg.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
+*/
 
 @font-face {
-    font-family: 'Pacifico';
-    src: url('Pacifico.ttf');
-    font-weight: bold;
+  font-family: 'Pacifico';
+  src: url('Pacifico.ttf');
+  font-weight: bold;
 }
