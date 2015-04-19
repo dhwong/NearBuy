@@ -2,11 +2,57 @@
  *= require_self
  */
 
+
 .pacifico {
 	font-family: 'Pacifico';
 	font-size: 500%;
-	padding-bottom: 38px;
-	padding-top: 30px;
+	padding-bottom: 40px;
+	padding-top: 70px;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+.search-tools {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.search-options {
+	margin-left: 108px;
+}
+
+.bg {
+	width: 100%;
+	height: 310px;
+	background-image: image_url("tx.jpg");
+	background-image: 50%;
+}
+
+.input-group {
+	color: #F9FAF5;
+	padding-left: 120px;
+	padding-right: 120px;
+}
+
+.onclick-menu {
+  position: relative;
+  display: inline-block;
+}
+.onclick-menu:before {
+   content: "click me!";
+}
+.onclick-menu:focus .onclick-menu-content {
+  display: block;
+}
+
+.onclick-menu-content {
+  position: absolute;
+  z-index: 1;
+
+  display: none;
+}
+
+.results {
+	margin-left: 150px;
+	margin-right: 150px;
 }

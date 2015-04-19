@@ -1,6 +1,4 @@
-h1 Item 1
-hr 
-h2 Item 2
-hr
-
-div (filled out with ng-repeat and restangular item query)
+.results
+	div ng-repeat="item in items"
+		h2 {{item.name}}
+		hr

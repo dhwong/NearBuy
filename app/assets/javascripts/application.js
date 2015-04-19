@@ -16,13 +16,13 @@
  = require_tree .
  */
 
-var APP = angular.module('Tutorial', [
+var app = angular.module('Tutorial', [
   'ui.router',
   'templates',
   'restangular'
 ]);
 
-APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'RestangularProvider',
+app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'RestangularProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
   RestangularProvider.setBaseUrl('/api');
   RestangularProvider.setDefaultRequestParams({format: 'json'});
@@ -39,7 +39,6 @@ APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
       url: '/home',
       abstract: true,
       templateUrl: 'home/index.html',
-      controller: 'indexCtrl'
     })
     .state('home.suggestions', {
       url: '',
@@ -48,6 +47,7 @@ APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
     .state('home.search', {
       url: '/results',
       templateUrl: 'home/results.html',
+      controller: "ResultsListController"
     })
     .state('widgets', {
       url: '/widgets',
