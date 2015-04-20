@@ -1,7 +1,11 @@
 class Api::ItemsController < Api::BaseController
   def index
     # this needs added functionality
-    respond_with :api, items
+    @search = Item.search do
+      fulltext params[:search]
+    end
+    @items = @search.results
+    respond_with :api, @items.include(:store)
   end
 
   def show

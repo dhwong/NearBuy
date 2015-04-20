@@ -6,6 +6,7 @@ gem 'bcrypt'
 
 # Postgres 
 gem 'pg'
+gem 'sunspot_rails'
 
 # front end dependencies
 gem 'sass-rails', '~> 4.0.3'
@@ -18,6 +19,7 @@ gem 'font-awesome-sass'
 # Rspecs
 group :development do
   gem 'spring-commands-rspec'
+  gem 'sunspot_solr'
 end
 
 group :development, :test do

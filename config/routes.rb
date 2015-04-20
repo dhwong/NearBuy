@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :stores
     resources :inventory_items
     resources :sessions, :only => [:create, :new, :destroy]
+    resources :searches, :only => :show
   end
 
 
