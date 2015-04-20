@@ -16,7 +16,7 @@
  = require_tree .
  */
 
-var app = angular.module('Tutorial', [
+var app = angular.module('NearBuy', [
   'ui.router',
   'templates',
   'restangular'
