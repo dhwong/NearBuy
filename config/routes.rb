@@ -7,10 +7,10 @@ Rails.application.routes.draw do
     resources :stores
     resources :inventory_items
     resources :sessions, :only => [:create, :new, :destroy]
-    resources :searches, :only => :show
+    match 'search', :to => 'search#search', :via => [:get, :post]
   end
 
-
+  
   get "*path", to: "application#index"
   root 'application#index'
 end

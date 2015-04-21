@@ -11,8 +11,8 @@ class Item < ActiveRecord::Base
 		text :name, :boost => 5
 		text :category
 		text :brand
-		text :stores do
-			stores.map(&:store).compact.join(" ")
-		end
+		#text :stores do
+			#stores.map(&:store).compact.join(" ")
+		#end
 	end
 end
