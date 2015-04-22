@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 # rails
 gem 'rails', '4.1.5'
 gem 'bcrypt'
+gem 'geocoder'
 
 # Postgres 
 gem 'pg'

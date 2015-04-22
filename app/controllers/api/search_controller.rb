@@ -32,7 +32,8 @@ class Api::SearchController < Api::BaseController
 			end
 			entry[:stores] = []
 			for store in store_list do
-				entry[:stores] << { :name => store.name, :location => store.location }
+				entry[:stores] << { :name => store.name, :address => store.address,
+									:latitude => store.latitude, :longitude => store.longitude }
 			end
 			_results << entry
 		end
