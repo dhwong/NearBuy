@@ -5,7 +5,7 @@ class Store < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true, length: { maximum: 63 }
 
 	searchable do
-		latlon(:location) { Sunspot::Util::Coordinates.new(lat, lon) }
-		
+		#latlon(:location) { Sunspot::Util::Coordinates.new(lat, lon) }
+		text :name
 	end
 end

@@ -4,16 +4,41 @@ class Api::SearchController < Api::BaseController
 
 
 	def search
-		#@search = search(params[:q])
-		#@results = @search.results
 
 		_search = Item.search do
 			fulltext params[:search][:query]
 			#fulltext("keywords", :fields => :search, :location)
 		end
 
+		_results = []
 
-		_response = _search.results
+		#[ 	{ 	:name => item.name,
+		#		:stores => []
+		#	},
+		#	{ 	:name => item.name,
+		#		:stores => [ {  :name => store.name,
+		#						:location => store.location },
+		#					 {  :name => store.name,
+		#					  	:location => store.location } ]
+		#	}
+		#]
+
+		for result in _search.results do
+			entry = {}
+			entry[:name] = result.name
+			store_list = []
+			for store in result.stores
+				store_list << store
+			end
+			entry[:stores] = []
+			for store in store_list do
+				entry[:stores] << { :name => store.name, :location => store.location }
+			end
+			_results << entry
+		end
+
+		render :json => { :response => _results }
+		#_response = _search.results
 
 		#^^^^^^^^^^^^^^^^
 		#_current_location = params[:location]
@@ -46,7 +71,7 @@ class Api::SearchController < Api::BaseController
 			#}
 		#}
 
-		render :json => { :response => _response }
+		#render :json => { :response => _response }
 	end
 
 
