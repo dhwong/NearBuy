@@ -24,9 +24,9 @@ After you have bower, run `bower install` in the project directory.
 
 #Sunspot Search through Solr
 
-$ bundle exec rake sunspot:solr:start
+'$ bundle exec rake sunspot:solr:start'
 
 ** notify sunspot of changes to data **
 
-$ bundle exex rake sunspot:reindex
+'$ bundle exec rake sunspot:reindex'
 
