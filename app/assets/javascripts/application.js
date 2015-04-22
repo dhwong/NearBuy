@@ -39,12 +39,13 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
       url: '/home',
       abstract: true,
       templateUrl: 'home/index.html',
+      controller: "homeController"
     })
     .state('home.suggestions', {
       url: '',
       templateUrl: 'home/suggestions.html',
     })
-    .state('home.search', {
+    .state('home.results', {
       url: '/results',
       templateUrl: 'home/results.html',
       controller: "ResultsListController"
