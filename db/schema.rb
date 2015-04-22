@@ -48,8 +48,10 @@ ActiveRecord::Schema.define(version: 20150419175021) do
   create_table "stores", force: true do |t|
     t.integer  "owner_id"
     t.string   "name"
-    t.string   "location"
+    t.string   "address"
     t.string   "store_type"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -7,7 +7,14 @@ class Item < ActiveRecord::Base
 	validates :brand, length: { maximum: 255 }
 
 
-	def self.search(search)
-		find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+	searchable do
+		text :name, :boost => 5
+		text :category
+		text :brand
+		#text :stores do
+			#stores.map(&:store).compact.join(" ")
+		#end
+		#join(:name, :target => Store, :type => :text, :join => { :from => :store_id, :to => :id })
+		#join(:location, :target => Store, :type => :text, :join => { :from => :store_id, :to => :id })
 	end
 end
