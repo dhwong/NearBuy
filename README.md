@@ -6,8 +6,6 @@ A shopping webapp made with Ruby Rails and Angular.
 
 ~~Testing server~~: https://damp-castle-8451.herokuapp.com/widgets
 
-# [!] Headsup to the testing team
-**We are going to need another day to assemble some of this, unfortunately.  If possible, hold off on testing until Sunday.  We appreciate your cooperation.**
 
 #Dependencies
 
@@ -22,4 +20,13 @@ After you have bower, run `bower install` in the project directory.
 #To run
 
 `rails server` in the project directory.  Follow the instructions to resolve any issues if it doesn't work right away.
+
+
+#Sunspot Search through Solr
+
+$ bundle exec rake sunspot:solr:start
+
+** notify sunspot of changes to data **
+
+$ bundle exex rake sunspot:reindex
 
