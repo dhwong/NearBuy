@@ -1,23 +1,26 @@
 class Api::StoresController < Api::BaseController
+
   def index
-    # this needs added functionality
-    respond_with :api, stores
+    render :json => stores
   end
 
   def show
-    respond_with :api, store
+    render :json => store
   end
 
   def create
-    respond_with :api, Store.create(store_params)
+    Store.create(store_params)
+    render :json => store
   end
 
   def update
-    respond_with :api, Store.update(store_params)
+    Store.update(store_params)
+    render :json => store
   end
 
   def destroy
-    respond_with :api, store.destroy
+    store.destroy
+    render :json => { :response => "Store deleted" }
   end
 
   private
@@ -33,4 +36,5 @@ class Api::StoresController < Api::BaseController
     def store_params
       params.require(:store).permit(:name, :store_type, :location, :owner_id)
     end
+    
 end

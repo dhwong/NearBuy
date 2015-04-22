@@ -1,23 +1,23 @@
 class Api::InventoryItemsController < Api::BaseController
+  
   def index
-    respond_with :api, inventory_items
+    render :json => inventory_items
   end
 
   def show
-    respond_with :api, inventory_item
+    render :json => inventory_item
   end
 
   def create
-    respond_with :api, InventoryItem.create(inventory_item_params)
+    InventoryItem.create(inventory_item_params)
+    render :json => inventory_item
   end
 
   def update
-    respond_with :api, InventoryItem.update(inventory_item_params)
+    InventoryItem.update(inventory_item_params)
+    render :json => inventory_item
   end
 
-  def destroy
-    respond_with :api, inventory_item.destroy
-  end
 
   private
 

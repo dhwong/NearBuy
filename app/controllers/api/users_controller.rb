@@ -1,24 +1,28 @@
 class Api::UsersController < Api::BaseController
   # before_filter :correct_user, only: :show
+  # ^^ To use for verifying the user
 
   def index
-    respond_with :api, users
+    render :json => users
   end
 
   def show
-    respond_with :api, user
+    render :json => user
   end
 
   def create
-    respond_with :api, users.create(user_params)
+    User.create(user_params)
+    render :json => user
   end
 
   def update
-    respond_with :api, users.update(user_params)
+    User.update(user_params)
+    render :json => user
   end
 
   def destroy
-    respond_with :api, user.destroy
+    user.destroy
+    render :json => { :response => "User deleted" }
   end
 
   private
@@ -35,4 +39,5 @@ class Api::UsersController < Api::BaseController
       params.require(:user).permit(:email, :fname, :lname, :isOwner,
                                   :password, :password_confirmation)
     end
+    
 end

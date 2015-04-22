@@ -17,6 +17,7 @@ class Api::SessionsController < Api::BaseController
 
 	def destroy
 		session[:user_id] = nil
+		render :json => { :response => "Logged out" }
 	end
 
 end
